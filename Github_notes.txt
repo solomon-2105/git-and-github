@@ -1,0 +1,180 @@
+Git and GitHub:
+===============
+
+= git saves history of ur project over a period of time 
+
+= used to track changes made to a code
+
+= so may people contributing to a project , by adding some functionalities, git tracks changes made to a project
+
+= GitHub is a online platform / website which allows us to host our git repositories 
+
+= repository is basically a folder where the changes are made
+
+= git is a version control system and GitHub , GitLab etc are the online platforms which allows us to host git repositories , that allows other people to use our codes , share them , and contribute to projects
+
+= How do we do it?
+===================
+
+= go to git.scm website and download git for your operating system and proceed with the following steps
+
+= terminal allows us to manipulate the files structures in our operating system using commands
+
+= the file which tracks the history is named as .git folder , they are hidden 
+ and how do we get it ?..... command : "git init" 
+it says initialized a git repository in the project folder
+
+= now whatever folder contains this .git folder is a project folder and whatever changes we be making to the folder , git tracks all of those changes
+
+= command: "git status" 
+  this command shows us the status of the folder's files , gathering information about commits , they're not in the history of the project 
+they are called as untracked files(their changes haven't been tracked by git)
+
+= now if we want others to know the history of the changes occurred in my folder , like to make the git to track the changes in my code ... 
+ command : " git add ."
+ here we have added all the files to the staging area ...the first step in making the files of our folder to get tracked by git 
+
+= we can even add individual files.." git add names.txt "
+
+= second step in making git ttrack the files is to use the command
+ command : "git commit -m "names.txt has been added" "
+
+= now if we have added all the files using "git add ." command and commited them using the command git commit -m "added all files" , when we use "git status" command we get some statement which says on branch master , nothing to commit , working tree clean becoz we have performed the first step over all of the elements in the folder and every file has been commited and nothing stays "uncommited" 
+
+= let's say we have made some changes to the names.txt file we have added before , so names.txt files has been modified
+
+= so add the same file again to update the files with the new changes
+ git add .
+
+= commit the file again , command : "git commit -m "names.txt has been modified" "
+ using command "git log" helps us to check entire history of changes made to the project folder
+
+= if i delete the file by chance then check for git status , it says a deletion made , so if i want a particular commit out of all the remaining commits , paste the commit code of its statements after checking git log
+
+= to remove a particular commit , copy the commit code just below the commit u want to be deleted ....
+
+= use command : "git reset "commit code copied before" "
+the previous commits will be in the unstaged area , and they'll be deleted , to get them back , we can use the command
+"git stash"
+
+= i have made quite a few changes but i dont want to commit them and i also dont want to loose those changes but i wanna take them whenever i want , 
+use git stash command
+
+= to bring those files back to the staging are , say "git stash pop" command 
+
+= "git stash clear" command helps us to delete all of those uncommited files 
+
+= now how to share our projects to other people on GitHub?
+ ========================================================
+
+= say we have a project ready made to be added to GitHub and be accessible to all of the users around the world 
+
+= create a repo in GitHub and copy its url
+
+= now to connect ur repo to ur folder in your system , set your terminal
+path to the project folder and type in the command 
+"git remote add origin <url> "
+
+= to share the changes to GitHub repo url ,command is 
+"git push origin master"
+ master is a branch here
+ 
+Branches: 
+=========
+
+= whenever we are working on new features or a bug , always create a new
+ branch apart from the main/master branch
+
+= we should never commit on the main branch, to make sure if our code has any bugs it doesn't affect the actual codes and affect the users
+
+= to create a new branch , use "git branch feature"
+  the head that comes during git status , the head pointer points to the feature branch , it stops pointing to the main branch and points to the feature branch 
+
+= now that we commit our code , our code is completely well off on the feature branch and isn't associated to the main branch (code maintainer's branch or master branch) ..... so if we want to show him our work and let the code be available to all .... we use " git merge feature" 
+to merge the feature branch to the main branch
+
+= fork is used to create a copy of another repo into our GitHub account
+(it is used to make changes to others projects , by copying it first , make the necessary changes and then ask for the owners to approve of our code)
+
+= from where we have forked the project file , that url we call it as upstream url
+so to clone it into our local system we use the command , 
+git remote add <upstream url>
+
+= now that we cloned it into our system we can make changes to it , now we have to create a new branch for the new changes made to it by us  , becoz we should never work on master branch of other's work
+
+"git branch kunal"
+"git checkout kunal"
+
+checkout basically means head pointer points to kunal branch
+
+= all the commits I make go to kunal branch , git add . 
+git commit -m "brr" 
+
+= to push this branch to the main project's main branch.... to merge the codes of mine with the actual branch 
+ we request the owner of the code via the pull request to merge our code with theirs....
+
+= for every feature or every bug we're working on , we need to create a new pull request ...
+
+= one pull request means one branch , one branch can only open one pull request...it would be very hard to deal some x number of pull requests on a single branch 
+
+= say we have removed some commits by using git reset <commit code just below the commit u wanna delete> , use git stash (so it goes  back to stash area) and it is deleted from commit history too and then if we wanna update the changes in our repo we have to force push the changes using the command
+"git push origin kunal -f"
+ and that commit will be gone from our repo too in GitHub
+
+= to make those changes in our master branch also , which doesn't happen normally , to make sure both of our repos get updated at a time , 
+
+= first we need to fetch all the commits and changes
+git fetch --all --prune
+(git checkout main to switch to main branch)
+
+= git reset --hard upstream/main
+reset the main branch of my origin to main branch of upstream
+and we'll be seeing those that main branch of upstream and main branch of mine are exactly same
+
+= git pull upstream main also does the same thing (internally) 
+
+= to merge some x number of commits into one commit , we use rebase command
+git rebase -i <copy and paste below commit>
+
+= all the commits above it I can either pick or squash into one single commit
+
+= whichever is listed as pick , squash is used to merge it into previous commits ,
+
+= and then again git push origin <branch name>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
