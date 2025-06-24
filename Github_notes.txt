@@ -7,21 +7,21 @@ Git and GitHub:
 
 = so may people contributing to a project , by adding some functionalities, git tracks changes made to a project
 
-= GitHub is a online platform / website which allows us to host our git repositories 
+= GitHub is an online platform / website which allows us to host our git repositories 
 
 = repository is basically a folder where the changes are made
 
-= git is a version control system and GitHub , GitLab etc are the online platforms which allows us to host git repositories , that allows other people to use our codes , share them , and contribute to projects
+= git is a version control system and GitHub, GitLab etc are the online platforms which allow us to host git repositories , that allow other people to use our code , share them , and contribute to projects
 
 = How do we do it?
 ===================
 
-= go to git.scm website and download git for your operating system and proceed with the following steps
+= go to git-scm website and download git for your operating system and proceed with the following steps
 
 = terminal allows us to manipulate the files structures in our operating system using commands
 
-= the file which tracks the history is named as .git folder , they are hidden 
- and how do we get it ?..... command : "git init" 
+= the file which tracks the history is named as .git folder , they are hidden
+and how do we get it?..... command : "git init" 
 it says initialized a git repository in the project folder
 
 = now whatever folder contains this .git folder is a project folder and whatever changes we be making to the folder , git tracks all of those changes
@@ -39,7 +39,7 @@ they are called as untracked files(their changes haven't been tracked by git)
 = second step in making git ttrack the files is to use the command
  command : "git commit -m "names.txt has been added" "
 
-= now if we have added all the files using "git add ." command and commited them using the command git commit -m "added all files" , when we use "git status" command we get some statement which says on branch master , nothing to commit , working tree clean becoz we have performed the first step over all of the elements in the folder and every file has been commited and nothing stays "uncommited" 
+= now if we have added all the files using "git add ." command and committed them using the command git commit -m "added all files" , when we use "git status" command we get some statement which says on branch master , nothing to commit , working tree clean becoz we have performed the first step over all of the elements in the folder and every file has been committed and nothing stays "uncommitted" 
 
 = let's say we have made some changes to the names.txt file we have added before , so names.txt files has been modified
 
@@ -57,23 +57,23 @@ they are called as untracked files(their changes haven't been tracked by git)
 the previous commits will be in the unstaged area , and they'll be deleted , to get them back , we can use the command
 "git stash"
 
-= i have made quite a few changes but i dont want to commit them and i also dont want to loose those changes but i wanna take them whenever i want , 
+= i have made quite a few changes but i dont want to commit them and i also dont want to lose those changes but i wanna take them whenever i want , 
 use git stash command
 
 = to bring those files back to the staging are , say "git stash pop" command 
 
-= "git stash clear" command helps us to delete all of those uncommited files 
+= "git stash clear" command helps us to delete all of those uncommitted files 
 
 = now how to share our projects to other people on GitHub?
  ========================================================
 
-= say we have a project ready made to be added to GitHub and be accessible to all of the users around the world 
+= say we have a project ready to be added to GitHub and be accessible to all of the users around the world 
 
 = create a repo in GitHub and copy its url
 
 = now to connect ur repo to ur folder in your system , set your terminal
-path to the project folder and type in the command 
-"git remote add origin <url> "
+path to the project folder and type in the command
+"git remote add origin <url>"
 
 = to share the changes to GitHub repo url ,command is 
 "git push origin master"
@@ -94,18 +94,18 @@ Branches:
 to merge the feature branch to the main branch
 
 = fork is used to create a copy of another repo into our GitHub account
-(it is used to make changes to others projects , by copying it first , make the necessary changes and then ask for the owners to approve of our code)
+(it is used to make changes to others' projects , by copying it first , make the necessary changes and then ask for the owners to approve of our code)
 
 = from where we have forked the project file , that url we call it as upstream url
 so to clone it into our local system we use the command , 
-git remote add <upstream url>
+git remote add upstream <upstream url>
 
 = now that we cloned it into our system we can make changes to it , now we have to create a new branch for the new changes made to it by us  , becoz we should never work on master branch of other's work
 
 "git branch kunal"
 "git checkout kunal"
 
-checkout basically means head pointer points to kunal branch
+checkout basically means HEAD pointer points to kunal branch
 
 = all the commits I make go to kunal branch , git add . 
 git commit -m "brr" 
@@ -125,7 +125,8 @@ git commit -m "brr"
 
 = first we need to fetch all the commits and changes
 git fetch --all --prune
-(git checkout main to switch to main branch)
+
+git checkout main   # to switch to main branch
 
 = git reset --hard upstream/main
 reset the main branch of my origin to main branch of upstream
@@ -138,43 +139,6 @@ git rebase -i <copy and paste below commit>
 
 = all the commits above it I can either pick or squash into one single commit
 
-= whichever is listed as pick , squash is used to merge it into previous commits ,
+= whichever is listed as pick, squash is used to merge it into previous commits ,
 
 = and then again git push origin <branch name>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
